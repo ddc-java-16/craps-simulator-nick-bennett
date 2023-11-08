@@ -13,7 +13,7 @@ public class Main {
     Map<State, Long> tallies = new EnumMap<>(State.class);
     RandomGenerator rng = RandomGenerator.getDefault();
     Stream.generate(() -> new Round().play(rng))
-        .limit(10_000_000_000L)
+        .limit(50_000_000_000L)
         .forEach((state) -> tallies.put(state, 1 + tallies.getOrDefault(state, 0L)));
     System.out.println(tallies);
   }
